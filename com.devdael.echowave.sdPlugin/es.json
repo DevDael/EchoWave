@@ -1,0 +1,12 @@
+{
+  "Name": "EchoWave",
+  "Description": "Comprobaciones visuales de eco de red y servicios web HTTP/HTTPS.",
+  "com.devdael.echowave.ping": {
+    "Name": "Comprobar destino",
+    "Tooltip": "Pulsa para enviar un eco. Mantén brevemente y suelta para revisar el último resultado."
+  },
+  "com.devdael.echowave.http": {
+    "Name": "Comprobar servicio web",
+    "Tooltip": "Pulsa para comprobar una URL HTTP/HTTPS. Mantén y suelta para ver el resultado guardado."
+  }
+}

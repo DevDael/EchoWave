@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EchoWave — Web Check</title>
+    <link rel="stylesheet" href="ping.css" />
+  </head>
+  <body>
+    <main>
+      <header><span>ECHOWAVE</span><p id="tagline">Web service check</p></header>
+      <label id="target-label" for="target">HTTP/HTTPS URL</label>
+      <input id="target" name="target" type="url" placeholder="https://example.com/health" autocomplete="off" spellcheck="false" />
+      <p id="target-help">The complete URL, including path and query, is requested. Do not enter secrets.</p>
+      <label id="theme-label" for="theme">Visual theme</label>
+      <select id="theme" name="theme">
+        <option value="echo-wave">Echo Wave</option>
+        <option value="terminal">Terminal</option>
+        <option value="neon">Neon Pulse</option>
+        <option value="hexaza">Hexaza</option>
+        <option value="sonar">Sonar</option>
+        <option value="blueprint-light">Blueprint Light</option>
+      </select>
+      <label id="display-mode-label" for="display-mode">Button display</label>
+      <select id="display-mode" name="displayMode">
+        <option id="display-mode-visual" value="visual">Animated theme</option>
+        <option id="display-mode-icon" value="custom-icon">Custom icon + live text</option>
+      </select>
+      <p id="display-mode-help">Choose an icon in Stream Deck and leave its Title field empty. Existing keys can adjust title placement and size in the T menu.</p>
+      <label id="language-label" for="language">Language</label>
+      <select id="language" name="language">
+        <option id="language-auto" value="auto">Automatic (Stream Deck)</option>
+        <option id="language-en" value="en">English</option>
+        <option id="language-es" value="es">Spanish</option>
+      </select>
+      <section class="hint"><strong id="use-label">Use</strong><span id="use-help">Tap to send a GET request. Hold and release to review HTTP status, response time, protocol and time.</span></section>
+      <p id="privacy" class="attribution">GET; 8-second timeout; redirects are reported, not followed. The URL and last result stay in local Stream Deck settings.</p>
+      <p id="attribution" class="attribution" hidden><span id="attribution-prefix">Hexaza visuals by</span> <a href="https://x.com/Piotezaza" target="_blank" rel="noopener noreferrer">Piotezaza</a><span id="attribution-suffix">. Used with permission in free EchoWave.</span></p>
+      <details id="http-guide" class="http-guide">
+        <summary id="http-guide-summary">What do HTTP 200, 404 and 503 mean?</summary>
+        <p id="http-guide-intro">An HTTP number means the server answered. It does not prove that the page or service works as intended.</p>
+        <p id="http-guide-groups" class="http-guide-heading">Status groups</p>
+        <dl>
+          <div><dt>2xx</dt><dd id="http-class-2xx">The request succeeded.</dd></div>
+          <div><dt>3xx</dt><dd id="http-class-3xx">Redirect or cache response. EchoWave does not follow redirects.</dd></div>
+          <div><dt>4xx</dt><dd id="http-class-4xx">The server rejected the request or resource.</dd></div>
+          <div><dt>5xx</dt><dd id="http-class-5xx">The server or gateway could not complete the request.</dd></div>
+        </dl>
+        <p id="http-guide-common" class="http-guide-heading">Common codes</p>
+        <dl>
+          <div><dt>200</dt><dd id="http-code-200">OK: the GET request succeeded.</dd></div>
+          <div><dt>204</dt><dd id="http-code-204">Success, with no response body.</dd></div>
+          <div><dt>301 / 302</dt><dd id="http-code-301-302">Permanent / temporary redirect.</dd></div>
+          <div><dt>400</dt><dd id="http-code-400">Bad request.</dd></div>
+          <div><dt>401 / 403</dt><dd id="http-code-401-403">Authentication required / access forbidden.</dd></div>
+          <div><dt>404</dt><dd id="http-code-404">The requested URL path was not found.</dd></div>
+          <div><dt>429</dt><dd id="http-code-429">Too many requests; rate limited.</dd></div>
+          <div><dt>500</dt><dd id="http-code-500">Internal server error.</dd></div>
+          <div><dt>502 / 504</dt><dd id="http-code-502-504">Bad gateway response / gateway timeout.</dd></div>
+          <div><dt>503</dt><dd id="http-code-503">Service temporarily unavailable.</dd></div>
+        </dl>
+        <p id="http-guide-no-response" class="http-guide-note">TIMEOUT, DNS ERROR and TLS ERROR are not HTTP codes: no HTTP response was received. HTTP 404 or 503 means a server did reply.</p>
+      </details>
+      <p id="validation" role="status"></p>
+    </main>
+    <script src="http.js"></script>
+  </body>
+</html>

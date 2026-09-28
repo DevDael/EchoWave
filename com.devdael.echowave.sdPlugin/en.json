@@ -1,0 +1,12 @@
+{
+  "Name": "EchoWave",
+  "Description": "Visual checks for network echo and HTTP/HTTPS web services.",
+  "com.devdael.echowave.ping": {
+    "Name": "Echo target",
+    "Tooltip": "Tap to send an echo. Hold briefly, then release, to review the last result."
+  },
+  "com.devdael.echowave.http": {
+    "Name": "Check web service",
+    "Tooltip": "Tap for an HTTP/HTTPS GET check. Hold and release for the saved result."
+  }
+}

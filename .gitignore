@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+artifacts/
+*.streamdeckplugin
+com.devdael.echowave.sdPlugin/bin/
+com.devdael.echowave.sdPlugin/logs/
+# Piotezaza's original artwork is included only in the authorized free plugin package,
+# not redistributed as a standalone file in this source repository.
+com.devdael.echowave.sdPlugin/imgs/themes/hexaza/background.png
+assets/themes/hexaza/

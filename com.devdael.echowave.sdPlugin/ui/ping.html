@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EchoWave</title>
+    <link rel="stylesheet" href="ping.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>ECHOWAVE</span>
+        <p id="tagline">Visual network echo</p>
+      </header>
+      <label id="target-label" for="target">Target</label>
+      <input id="target" name="target" placeholder="192.168.1.25 or example.com" autocomplete="off" />
+      <p id="target-help">IPv4, IPv6, hostname, or URL. Only the host is used.</p>
+
+      <label id="theme-label" for="theme">Visual theme</label>
+      <select id="theme" name="theme">
+        <optgroup id="themes-dark" label="Signature and dark">
+          <option value="echo-wave">Echo Wave</option>
+          <option value="minimal">Minimal</option>
+          <option value="packet">Packet</option>
+          <option value="sonar">Sonar</option>
+          <option value="terminal">Terminal</option>
+          <option value="hexaza">Hexaza</option>
+          <option value="orbit">Orbit</option>
+          <option value="network-mesh">Network Mesh</option>
+          <option value="water-drop">Water Drop</option>
+          <option value="seismic">Seismic</option>
+          <option value="particle-burst">Particle Burst</option>
+          <option value="prism">Prism</option>
+          <option value="aurora-dark">Aurora Dark</option>
+          <option value="glass-dark">Glass Dark</option>
+          <option value="neon">Neon Pulse</option>
+          <option value="synthwave">Synthwave</option>
+        </optgroup>
+        <optgroup id="themes-light" label="Light themes">
+          <option value="blueprint-light">Blueprint Light</option>
+          <option value="solar-light">Solar Light</option>
+        </optgroup>
+      </select>
+
+      <label id="display-mode-label" for="display-mode">Button display</label>
+      <select id="display-mode" name="displayMode">
+        <option id="display-mode-visual" value="visual">Animated theme</option>
+        <option id="display-mode-icon" value="custom-icon">Custom icon + live text</option>
+      </select>
+      <p id="display-mode-help">Choose an icon in Stream Deck and leave its Title field empty. Existing keys can adjust title placement and size in the T menu.</p>
+
+      <label id="language-label" for="language">Language</label>
+      <select id="language" name="language">
+        <option id="language-auto" value="auto">Automatic (Stream Deck)</option>
+        <option id="language-en" value="en">English</option>
+        <option id="language-es" value="es">Spanish</option>
+      </select>
+      <p id="language-help">Automatic follows the language selected in Stream Deck.</p>
+
+      <section class="hint">
+        <strong id="use-label">Use</strong>
+        <span id="use-help">Tap to ping. Hold briefly and release; the saved metrics will advance automatically.</span>
+      </section>
+      <p id="attribution" class="attribution" hidden><span id="attribution-prefix">Hexaza visuals by</span> <a href="https://x.com/Piotezaza" target="_blank" rel="noopener noreferrer">Piotezaza</a><span id="attribution-suffix">. Used with permission in free EchoWave.</span></p>
+      <p id="validation" role="status"></p>
+    </main>
+    <script src="ping.js"></script>
+  </body>
+</html>

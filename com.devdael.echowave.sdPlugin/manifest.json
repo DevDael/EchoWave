@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.devdael.echowave",
+  "Name": "EchoWave",
+  "Description": "Visual checks for network echo and HTTP/HTTPS web services.",
+  "Version": "0.9.4.0",
+  "Author": "DevDael",
+  "Icon": "imgs/plugin-icon",
+  "Category": "EchoWave",
+  "CategoryIcon": "imgs/category-icon",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Nodejs": {
+    "Version": "24"
+  },
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Actions": [
+    {
+      "UUID": "com.devdael.echowave.ping",
+      "Name": "Echo target",
+      "Icon": "imgs/ping-action",
+      "Tooltip": "Tap to send an echo. Hold briefly, then release, to review the last result.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "PropertyInspectorPath": "ui/ping.html",
+      "States": [
+        {
+          "Image": "imgs/ping-ready",
+          "FontSize": 10,
+          "FontStyle": "Regular",
+          "TitleAlignment": "middle"
+        }
+      ]
+    },
+    {
+      "UUID": "com.devdael.echowave.http",
+      "Name": "Check web service",
+      "Icon": "imgs/http-action",
+      "Tooltip": "Tap for an HTTP/HTTPS GET check. Hold and release for the saved result.",
+      "Controllers": [
+        "Keypad"
+      ],
+      "PropertyInspectorPath": "ui/http.html",
+      "States": [
+        {
+          "Image": "imgs/http-ready",
+          "FontSize": 10,
+          "FontStyle": "Regular",
+          "TitleAlignment": "middle"
+        }
+      ]
+    }
+  ]
+}

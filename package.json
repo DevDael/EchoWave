@@ -1,0 +1,36 @@
+{
+  "name": "echowave-stream-deck",
+  "version": "0.9.4",
+  "private": true,
+  "description": "EchoWave: visual Stream Deck checks for ICMP echo and HTTP/HTTPS services on Windows.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "clean": "node ./scripts/clean.mjs",
+    "test": "tsx --test test/**/*.test.ts",
+    "preview:themes": "tsx ./scripts/generate-theme-preview.mts",
+    "preview:web": "tsx ./scripts/generate-web-theme-preview.mts",
+    "smoke": "node ./scripts/smoke-plugin.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify:public": "node ./scripts/verify-public.mjs",
+    "validate": "npm run typecheck && npm run test && npm run build && npm run smoke && npm run verify:public",
+    "link": "npm run build && npm run smoke && streamdeck dev && streamdeck link com.devdael.echowave.sdPlugin",
+    "dev": "npm run build && npm run smoke && streamdeck restart com.devdael.echowave",
+    "package": "npm run package:public",
+    "package:public": "npm run validate && node ./scripts/require-release-artwork.mjs && streamdeck pack --force com.devdael.echowave.sdPlugin"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "2.1.2",
+    "@elgato/utils": "0.6.0"
+  },
+  "devDependencies": {
+    "@elgato/cli": "1.9.0",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  }
+}
